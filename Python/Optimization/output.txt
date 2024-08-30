@@ -1,4 +1,4 @@
-\* DToptimization *\
+\* Optimization *\
 Minimize
 OBJ: 500 flow_DC1_ST100_Fruit + 500 flow_DC1_ST100_Vegetable
  + 500 flow_DC1_ST101_Fruit + 500 flow_DC1_ST101_Vegetable
