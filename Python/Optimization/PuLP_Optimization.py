@@ -2,10 +2,8 @@ from pulp import *
 import datetime
 import pandas as pd
 
-inputs = r'C:\Users\Owner\OneDrive - SOLLUS\Personal\Documents\GitHub\Dabbs_Public\Python\Optimization\Inputs.xlsx'
-variable=r'C:\Users\Owner\OneDrive - SOLLUS\Personal\Documents\GitHub\Dabbs_Public\Python\Optimization\variable.txt'
-problem=r'C:\Users\Owner\OneDrive - SOLLUS\Personal\Documents\GitHub\Dabbs_Public\Python\Optimization\problem.txt'
-solution = r'C:\Users\Owner\OneDrive - SOLLUS\Personal\Documents\GitHub\Dabbs_Public\Python\Optimization\output.txt'
+inputs = r'C:\FilePath\Inputs.xlsx'
+solution = r'C:\FilePath\output.txt'
 
 #Facility Information
 facility=pd.read_excel(inputs, sheet_name='Constraints')
@@ -35,13 +33,13 @@ demand=stores.set_index(['Store','Product'])['Demand'].to_dict()
 #####_____PULP_OPTIMIZATION_____####
 
 #State LP Problem
-prob = LpProblem("DToptimization",LpMinimize)
+prob = LpProblem("Optimization",LpMinimize)
 
 #Variables
 vars = LpVariable.dict('flow',(facility_l,stores_l,product_l),0,None,LpContinuous) 
 
 #Objective Function
-print('Construct_OBjective_Function')
+print('Construct_Objective_Function')
 print("current time:-", datetime.datetime.now())
 prob += lpSum([vars[f]*costs[f] for f in costs])
 
@@ -50,11 +48,9 @@ for j in stores_l:
     for k in product_l:
         prob += lpSum(vars[i,j,k] for i in facility_l)==demand[j,k]
 
-
 for i in facility_l:
-    #for j in stores_l:
-        for k in product_l:
-            prob += lpSum(vars[i,j,k] for j in stores_l)<=DC_max[i,k]
+    for k in product_l:
+        prob += lpSum(vars[i,j,k] for j in stores_l)<=DC_max[i,k]
 
 #Solution
 prob.solve() # This solves the linear problem
