@@ -3,7 +3,7 @@ import requests
 import time
 import io
 
-dirname = r'C:\Users\Owner\OneDrive - SOLLUS\Personal\Documents\GitHub\Dabbs_Public\Python\Web Scrape'
+dirname = r'C:\FilePath'
 
 filename = '\PythonInputs.xlsx'
 outputname = '\TickerOutput.xlsx'
