@@ -1,0 +1,79 @@
+\* Optimization *\
+Minimize
+OBJ: 500 flow_DC1_ST100_Fruit + 500 flow_DC1_ST100_Vegetable
+ + 500 flow_DC1_ST101_Fruit + 500 flow_DC1_ST101_Vegetable
+ + 500 flow_DC1_ST102_Fruit + 500 flow_DC1_ST102_Vegetable
+ + 500 flow_DC1_ST103_Fruit + 500 flow_DC1_ST103_Vegetable
+ + 500 flow_DC1_ST104_Fruit + 500 flow_DC1_ST104_Vegetable
+ + 750 flow_DC2_ST100_Fruit + 750 flow_DC2_ST100_Vegetable
+ + 750 flow_DC2_ST101_Fruit + 750 flow_DC2_ST101_Vegetable
+ + 750 flow_DC2_ST102_Fruit + 750 flow_DC2_ST102_Vegetable
+ + 750 flow_DC2_ST103_Fruit + 750 flow_DC2_ST103_Vegetable
+ + 750 flow_DC2_ST104_Fruit + 750 flow_DC2_ST104_Vegetable
+ + 550 flow_DC3_ST100_Fruit + 550 flow_DC3_ST100_Vegetable
+ + 550 flow_DC3_ST101_Fruit + 550 flow_DC3_ST101_Vegetable
+ + 550 flow_DC3_ST102_Fruit + 550 flow_DC3_ST102_Vegetable
+ + 550 flow_DC3_ST103_Fruit + 550 flow_DC3_ST103_Vegetable
+ + 550 flow_DC3_ST104_Fruit + 550 flow_DC3_ST104_Vegetable
+ + 650 flow_DC4_ST100_Fruit + 650 flow_DC4_ST100_Vegetable
+ + 650 flow_DC4_ST101_Fruit + 650 flow_DC4_ST101_Vegetable
+ + 650 flow_DC4_ST102_Fruit + 650 flow_DC4_ST102_Vegetable
+ + 650 flow_DC4_ST103_Fruit + 650 flow_DC4_ST103_Vegetable
+ + 650 flow_DC4_ST104_Fruit + 650 flow_DC4_ST104_Vegetable
+ + 1500 flow_UNS_ST100_Fruit + 1500 flow_UNS_ST100_Vegetable
+ + 1500 flow_UNS_ST101_Fruit + 1500 flow_UNS_ST101_Vegetable
+ + 1500 flow_UNS_ST102_Fruit + 1500 flow_UNS_ST102_Vegetable
+ + 1500 flow_UNS_ST103_Fruit + 1500 flow_UNS_ST103_Vegetable
+ + 1500 flow_UNS_ST104_Fruit + 1500 flow_UNS_ST104_Vegetable
+Subject To
+_C1: flow_DC1_ST100_Fruit + flow_DC2_ST100_Fruit + flow_DC3_ST100_Fruit
+ + flow_DC4_ST100_Fruit + flow_UNS_ST100_Fruit = 750
+_C10: flow_DC1_ST104_Vegetable + flow_DC2_ST104_Vegetable
+ + flow_DC3_ST104_Vegetable + flow_DC4_ST104_Vegetable
+ + flow_UNS_ST104_Vegetable = 800
+_C11: flow_DC1_ST100_Fruit + flow_DC1_ST101_Fruit + flow_DC1_ST102_Fruit
+ + flow_DC1_ST103_Fruit + flow_DC1_ST104_Fruit <= 1000
+_C12: flow_DC1_ST100_Vegetable + flow_DC1_ST101_Vegetable
+ + flow_DC1_ST102_Vegetable + flow_DC1_ST103_Vegetable
+ + flow_DC1_ST104_Vegetable <= 1200
+_C13: flow_DC2_ST100_Fruit + flow_DC2_ST101_Fruit + flow_DC2_ST102_Fruit
+ + flow_DC2_ST103_Fruit + flow_DC2_ST104_Fruit <= 750
+_C14: flow_DC2_ST100_Vegetable + flow_DC2_ST101_Vegetable
+ + flow_DC2_ST102_Vegetable + flow_DC2_ST103_Vegetable
+ + flow_DC2_ST104_Vegetable <= 500
+_C15: flow_DC3_ST100_Fruit + flow_DC3_ST101_Fruit + flow_DC3_ST102_Fruit
+ + flow_DC3_ST103_Fruit + flow_DC3_ST104_Fruit <= 1025
+_C16: flow_DC3_ST100_Vegetable + flow_DC3_ST101_Vegetable
+ + flow_DC3_ST102_Vegetable + flow_DC3_ST103_Vegetable
+ + flow_DC3_ST104_Vegetable <= 1100
+_C17: flow_DC4_ST100_Fruit + flow_DC4_ST101_Fruit + flow_DC4_ST102_Fruit
+ + flow_DC4_ST103_Fruit + flow_DC4_ST104_Fruit <= 650
+_C18: flow_DC4_ST100_Vegetable + flow_DC4_ST101_Vegetable
+ + flow_DC4_ST102_Vegetable + flow_DC4_ST103_Vegetable
+ + flow_DC4_ST104_Vegetable <= 510
+_C19: flow_UNS_ST100_Fruit + flow_UNS_ST101_Fruit + flow_UNS_ST102_Fruit
+ + flow_UNS_ST103_Fruit + flow_UNS_ST104_Fruit <= 5000
+_C2: flow_DC1_ST100_Vegetable + flow_DC2_ST100_Vegetable
+ + flow_DC3_ST100_Vegetable + flow_DC4_ST100_Vegetable
+ + flow_UNS_ST100_Vegetable = 500
+_C20: flow_UNS_ST100_Vegetable + flow_UNS_ST101_Vegetable
+ + flow_UNS_ST102_Vegetable + flow_UNS_ST103_Vegetable
+ + flow_UNS_ST104_Vegetable <= 5000
+_C3: flow_DC1_ST101_Fruit + flow_DC2_ST101_Fruit + flow_DC3_ST101_Fruit
+ + flow_DC4_ST101_Fruit + flow_UNS_ST101_Fruit = 650
+_C4: flow_DC1_ST101_Vegetable + flow_DC2_ST101_Vegetable
+ + flow_DC3_ST101_Vegetable + flow_DC4_ST101_Vegetable
+ + flow_UNS_ST101_Vegetable = 750
+_C5: flow_DC1_ST102_Fruit + flow_DC2_ST102_Fruit + flow_DC3_ST102_Fruit
+ + flow_DC4_ST102_Fruit + flow_UNS_ST102_Fruit = 600
+_C6: flow_DC1_ST102_Vegetable + flow_DC2_ST102_Vegetable
+ + flow_DC3_ST102_Vegetable + flow_DC4_ST102_Vegetable
+ + flow_UNS_ST102_Vegetable = 850
+_C7: flow_DC1_ST103_Fruit + flow_DC2_ST103_Fruit + flow_DC3_ST103_Fruit
+ + flow_DC4_ST103_Fruit + flow_UNS_ST103_Fruit = 700
+_C8: flow_DC1_ST103_Vegetable + flow_DC2_ST103_Vegetable
+ + flow_DC3_ST103_Vegetable + flow_DC4_ST103_Vegetable
+ + flow_UNS_ST103_Vegetable = 700
+_C9: flow_DC1_ST104_Fruit + flow_DC2_ST104_Fruit + flow_DC3_ST104_Fruit
+ + flow_DC4_ST104_Fruit + flow_UNS_ST104_Fruit = 800
+End
