@@ -1,6 +1,6 @@
 'Module 1
+'Refreshes range of cells with stock ticker symbols and then updates linked data associated with those symbols.
 Sub Macro1()
-
     If ActiveSheet.FilterMode Then ActiveSheet.ShowAllData
     Range("A4:A1200").Select
     Selection.Copy
@@ -11,21 +11,19 @@ Sub Macro1()
     Selection.ConvertToLinkedDataType ServiceID:=268435456, LanguageCulture:= _
         "en-US"
 End Sub
-Sub FollowLink()
 
+Sub FollowLink()
+'Allows user to select a cell which contains a stock ticker symbol (ex/ Apple ticker equals AAPL), then opens Yahoo finance for the selected stock.
 Dim WebUrl As String
 Dim i As Integer
-
-    'For i = 1 To ActiveSheet.Cells(1, 2).Value
-    'WebUrl = "https://finance.yahoo.com/quote/" '& (i, 1).Value & """"
 WebUrl = "https://finance.yahoo.com/quote/" & ActiveCell.Value & """"
-
 Shell ("C:\Program Files (x86)\Google\Chrome\Application\chrome.exe -url " & WebUrl)
 
 End Sub
 
 
 'Module 2
+'Saves workbook and then closes. Used for password spreadsheet.
 Dim CloseTime As Date
 Sub TimeSetting()
     CloseTime = TimeValue("19:10:00")
@@ -44,12 +42,9 @@ End Sub
 
 
 Sub PasteValues()
-'
 ' Macro2 Macro
-'
+' Shortcut for copying in data from other sources as Paste Values Only.
 ' Keyboard Shortcut: Ctrl+q
-'
-    'Range("A21").Select
     
     Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
         :=False, Transpose:=False
