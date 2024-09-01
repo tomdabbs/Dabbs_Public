@@ -1,14 +1,13 @@
 Sub Macro1()
-'
 ' Macro1 Macro
-'
-'
+' alt + q; copy and pastes in plain text
+
     Selection.PasteAndFormat (wdFormatPlainText)
 End Sub
+
 Sub Macro2()
-'
 ' Macro2 Macro
-'
+' alt + w; toggles bold and underline
 '
     Selection.Font.Bold = wdToggle
     If Selection.Font.Underline = wdUnderlineNone Then
@@ -17,10 +16,10 @@ Sub Macro2()
         Selection.Font.Underline = wdUnderlineNone
     End If
 End Sub
+
 Sub Macro3()
-'
 ' Macro3 Macro
-'
+' alt + e; toggles underline
 '
     If Selection.Font.Underline = wdUnderlineNone Then
         Selection.Font.Underline = wdUnderlineSingle
@@ -30,10 +29,12 @@ Sub Macro3()
 End Sub
 
 Sub Macro5()
-'Selection.Font.Color = wdColorRed
-'WasteTime (3)
-Selection.Font.Color = wdColorBlack
+' Macro5 Macro
+' alt + s; font set to black
+
+    Selection.Font.Color = wdColorBlack
 End Sub
+
 Sub WasteTime(Finish As Long)
  
     Dim NowTick As Long
@@ -48,4 +49,12 @@ Sub WasteTime(Finish As Long)
  
     Loop Until NowTick >= EndTick
  
+End Sub
+
+Sub Macro4()
+' Macro4 Macro
+' alt + a; removes highlight
+'
+    Options.DefaultHighlightColorIndex = wdNoHighlight
+    Selection.Range.HighlightColorIndex = wdNoHighlight
 End Sub
