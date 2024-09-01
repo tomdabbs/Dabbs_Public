@@ -1,6 +1,0 @@
-Postgres folder:
-
-All sql files were scripted in VS Code and executed against a local PostgreSQL database.
-
-The python file was used to generate PostreSQL database from a local file stored under the folder AdventureWorksData.
-
