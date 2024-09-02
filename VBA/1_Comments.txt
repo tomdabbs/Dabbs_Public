@@ -1,0 +1,6 @@
+
+VBA folder:
+
+These simple scripts are used on a daily basis to assist with efficiency when using the associated Office program.
+
+More to come.

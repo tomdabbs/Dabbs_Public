@@ -1,0 +1,11 @@
+
+SQL folder:
+
+All sql files were scripted in VS Code and executed against a local SQL Server database.
+
+These files are duplicated in the Postgres folder to demonstrate the differences in syntax required TSQL and PostgreSQL.
+
+1. Script 'AW_Sales_ByCompany_ByProduct_DESC' is a query that joins multiple tables and sorts the sales of product by company in descending order.
+2. Script 'AW_Sales_ByCompany_ByQuartile' is a query that joins multiple tables and ranks the company sales by quartile.
+3. Script 'AW_Top5_ProductsBoughtTogether' is a query that joins multi tables with themselves and each other and lists the Top 5 products bought together.
+4. Script 'AW_UnitsSolds_ByProduct_ASC' is a query that left joins two tables and displays the number of units sold by product name.

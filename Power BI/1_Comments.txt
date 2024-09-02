@@ -1,0 +1,4 @@
+
+Power BI folder:
+
+The file(s) located in this folder are examples of using Power BI to analyze, transform and visualize data sets.
