@@ -1,0 +1,11 @@
+
+Python_Optimization folder:
+
+I used the python PuLP library to solve / optimize the distribution of fruits and vegetables from multiple distribution centers (DC1-4) to stores (ST101-104).
+
+The distribution centers had cycle (number of fruits and vegetables) parameters that it could handle and well as costs per fruit and vegetable to handle and ship.
+
+The stores had demand (number of fruits and vegetables to be sold) parameters that it required.
+
+Excel file 'Inputs.xlsx' contains the parameters / constraints used by the optimization script.
+Excel file 'Excel_Validation.xlsx' validates the optimization script's results.
