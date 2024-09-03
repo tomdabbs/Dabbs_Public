@@ -4,7 +4,7 @@ import pandas as pd
 import datetime
 from pytz import timezone
 
-dirname = r'C:\Users\Owner\OneDrive - SOLLUS\Personal\Documents\GitHub\Dabbs_Public\Python_APIconnect'  
+dirname = r'C:\FolderName'  
 filename = '\PythonInputs.xlsx'
 outputname = '\OptionsUnusualOutput.xlsx'
 
