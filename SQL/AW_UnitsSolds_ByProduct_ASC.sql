@@ -1,6 +1,6 @@
 USE AdventureWorksLT2012
 
-SELECT SalesLT.Product.Name, Count(SalesLT.SalesOrderDetail.SalesOrderID) AS SalesOrderCount
-FROM SalesLT.Product LEFT JOIN SalesLT.SalesOrderDetail ON SalesLT.Product.ProductID = SalesLT.SalesOrderDetail.ProductID
-GROUP BY SalesLT.Product.Name
-ORDER BY SalesLT.Product.Name;
+SELECT p.Name, Count(sod.SalesOrderID) AS SalesOrderCount
+FROM SalesLT.Product as p LEFT JOIN SalesLT.SalesOrderDetail as sod ON p.ProductID = sod.ProductID
+GROUP BY p.Name
+ORDER BY p.Name;
