@@ -1,14 +1,14 @@
 
 USE AdventureWorksLT2012
 
-SELECT SalesLT.Customer.CompanyName, SalesLT.Product.Name, Sum(SalesLT.SalesOrderDetail.LineTotal) AS SumOfLineTotal
-FROM SalesLT.Product INNER JOIN 
-(SalesLT.Customer INNER JOIN 
-(SalesLT.SalesOrderHeader INNER JOIN SalesLT.SalesOrderDetail ON SalesLT.SalesOrderHeader.SalesOrderID = SalesLT.SalesOrderDetail.SalesOrderID)
-ON SalesLT.Customer.CustomerID = SalesLT.SalesOrderHeader.CustomerID) 
-ON SalesLT.Product.ProductID = SalesLT.SalesOrderDetail.ProductID
-GROUP BY SalesLT.Customer.CompanyName, SalesLT.Product.Name
-ORDER BY Sum(SalesLT.SalesOrderDetail.LineTotal) DESC;
+SELECT c.CompanyName, p.Name, Sum(sod.LineTotal) AS SumOfLineTotal
+FROM SalesLT.Product as p INNER JOIN 
+(SalesLT.Customer as c INNER JOIN 
+(SalesLT.SalesOrderHeader as soh INNER JOIN SalesLT.SalesOrderDetail as sod ON soh.SalesOrderID = sod.SalesOrderID)
+ON c.CustomerID = soh.CustomerID) 
+ON p.ProductID = sod.ProductID
+GROUP BY c.CompanyName, p.Name
+ORDER BY Sum(sod.LineTotal) DESC;
 
 
 
