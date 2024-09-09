@@ -1,10 +1,10 @@
 USE AdventureWorksLT2012
 
 SELECT 
-	SalesLT.Customer.CompanyName AS CompanyName,
-	Sum(SalesLT.SalesOrderDetail.LineTotal),
-	NTILE(4) OVER(ORDER BY Sum(SalesLT.SalesOrderDetail.LineTotal) DESC) AS Quartile
-FROM   SalesLT.Customer INNER JOIN
-             SalesLT.SalesOrderHeader ON SalesLT.Customer.CustomerID = SalesLT.SalesOrderHeader.CustomerID INNER JOIN
-             SalesLT.SalesOrderDetail ON SalesLT.SalesOrderHeader.SalesOrderID = SalesLT.SalesOrderDetail.SalesOrderID
+	c.CompanyName AS CompanyName,
+	Sum(sod.LineTotal),
+	NTILE(4) OVER(ORDER BY Sum(sod.LineTotal) DESC) AS Quartile
+FROM   SalesLT.Customer AS c INNER JOIN
+             SalesLT.SalesOrderHeader AS soh ON c.CustomerID = soh.CustomerID INNER JOIN
+             SalesLT.SalesOrderDetail AS sod ON soh.SalesOrderID = sod.SalesOrderID
 GROUP BY CompanyName;
