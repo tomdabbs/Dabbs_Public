@@ -3,7 +3,7 @@ USE AdventureWorksLT2012
 
 ;WITH SalesData AS (
     SELECT 
-        c.CompanyName, 
+        c.CompanyName,
         p.Name, 
         sod.LineTotal
     FROM 
