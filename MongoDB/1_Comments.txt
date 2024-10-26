@@ -1,0 +1,11 @@
+
+Python_Webscrape folder:
+
+I created a python script to scrape financial data from 'Finviz.com' for individual stock tickers.
+
+I arranged the data in a two dimensional format so that I could easily sort hunderds of ticker symbols based on custom criteria.
+
+Excel file 'PythonInputs.xlsx' contains the ticker symbols that I want to lookup and scrape financial information from the website.
+Excel file 'TickerOutput.xlsx' is the output from the python file 'StockFinancialData.py' in two dimensional format.
+
+I trigger the python file to run every night (after trading hours) using Windows Task Scheduler.
