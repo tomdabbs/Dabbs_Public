@@ -13,7 +13,6 @@ response = requests.get(url)
 soup = bs(response.content,'html.parser')
 
 json_data = str(soup)  
-#print(soup)
 
 try:
     data = json.loads(json_data)
@@ -54,7 +53,6 @@ for index, row in docsdf.iterrows():
         collection.update_one(query, {'$set': row.to_dict()}, upsert=True)
         added_count += 1  # Increment for added rows
 
-# Output the counts
 print(f"Rows reviewed: {reviewed_count}")
 print(f"Rows updated: {updated_count}")
 print(f"Rows added: {added_count}")
