@@ -4,8 +4,8 @@ import re
 
 client = MongoClient('mongodb://localhost:27017/')
 
-db = client["eVA"]  # Replace with your DB name
-collection = db["eVA_Awarded"]  # Replace with your collection name
+db = client["eVA"]
+collection = db["eVA_Awarded"]
 
 query = {"doccddesc": {"$ne": "Quick Quote"}}
 
@@ -22,7 +22,6 @@ def remove_objectid(doc):
     print(doc)
     return doc
 
-# Remove ObjectId wrapper from the dictionary
 cleaned_data = remove_objectid(results)
 df = pd.DataFrame(cleaned_data)
 print(df)
