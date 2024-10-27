@@ -1,11 +1,10 @@
 
-Python_Webscrape folder:
+MongoDB folder:
 
-I created a python script to scrape financial data from 'Finviz.com' for individual stock tickers.
+I created a python script to scrape data from the State of Virginia's Procurement Website. I specifically lookup a Solr-powered 
+Java website that uses JSP for dynamic content generation and serves as a public search interface for accessing and procurement data.
 
-I arranged the data in a two dimensional format so that I could easily sort hunderds of ticker symbols based on custom criteria.
-
-Excel file 'PythonInputs.xlsx' contains the ticker symbols that I want to lookup and scrape financial information from the website.
-Excel file 'TickerOutput.xlsx' is the output from the python file 'StockFinancialData.py' in two dimensional format.
+After I query and extract the data, I open a local MongoDB and use the Upsert function to identify fields that are currently in the eVA database and 
+update any results that are equal based on field called 'externalid'. If the results query are not found in the MondoDB, they are added.
 
 I trigger the python file to run every night (after trading hours) using Windows Task Scheduler.
